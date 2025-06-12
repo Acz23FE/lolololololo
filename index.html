@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chocolate Obscuro Premium</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo">
+      <span>Amăruin</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#tienda">Tienda</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <h1>Amăruin</h1>
+      <p>El arte del chocolate fino, con tradición y sabor inigualable.</p>
+    </section>
+
+    <s<section id="productos">
+  <h2>Productos Destacados</h2>
+  
+  <div class="producto">
+    <p>🍫 Chocolate Negro - $50</p>
+    <button onclick="agregarAlCarrito('Chocolate Negro', 50)">Agregar al carrito</button>
+  </div>
+  
+  <div class="producto">
+    <p>🍫 Chocolate con Almendras - $65</p>
+    <button onclick="agregarAlCarrito('Chocolate con Almendras', 65)">Agregar al carrito</button>
+  </div>
+  
+  <div class="producto">
+    <p>🍫 Chocolate con Nuez - $60</p>
+    <button onclick="agregarAlCarrito('Chocolate con Nuez', 60)">Agregar al carrito</button>
+  </div>
+
+  <h3>🛒 Carrito</h3>
+  <ul id="lista-carrito"></ul>
+  <p>Total: $<span id="total">0</span></p>
+  <button onclick="finalizarCompra()">Finalizar Compra</button>
+</section>
+
+    </section>
+
+    <section id="Porque Vendemos Chocolate?">
+      <h2>Porque vendemos chocolate?</h2>
+      <p>“Fue lo primero que se me ocurrió”, Pero … también porque el chocolate tiene su origen en Mesoamérica, fue cultivado por mas de 3000 años por civilizaciones como los aztecas, mayas y olmecas, por lo que es un alimento mexicano lo cual nos llamo la atención y decidimos “venderlo”.</p>
+    </section>
+
+    <section id="blog">
+      <h2>Noticias</h2>
+      <article>
+        <h3>Que beneficios tiene el consumir chocolate?</h3>
+        <p>El chocolate oscuro es rico en antioxidantes, mejora la circulación, eleva el estado de ánimo, estimula la memoria y protege tu corazón. ¡Un placer que también cuida de ti :) !</div>.</p>
+      </article>
+      <article>
+        <h3>Proximamente agregaremos mas productos</h3>
+        <p>creo...</p>
+      </article>
+    </section>
+
+    <section id="tienda">
+      <h2>Tienda en Línea</h2>
+      <p>Compra nuestros productos desde casa, con envíos seguros y rápidos.</p>
+      <button onclick="window.location='#productos'">Ir a Productos</button>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>📧 Email: 23acCafe@gmail.com</p>
+      <p>📞 Tel: +52 272 286 61 51</p>
+      <p>📍 Dirección: Oriente 15</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Chocolate Obscuro. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+  let carrito = [];
+  let total = 0;
+
+  function agregarAlCarrito(nombre, precio) {
+    carrito.push({ nombre, precio });
+    total += precio;
+    actualizarCarrito();
+  }
+
+  function actualizarCarrito() {
+    const lista = document.getElementById("lista-carrito");
+    const totalElemento = document.getElementById("total");
+
+    lista.innerHTML = "";
+
+    carrito.forEach((producto) => {
+      const item = document.createElement("li");
+      item.textContent = `${producto.nombre} - $${producto.precio}`;
+      lista.appendChild(item);
+    });
+
+    totalElemento.textContent = total;
+  }
+
+  function finalizarCompra() {
+    if (carrito.length === 0) {
+      alert("El carrito está vacío.");
+    } else {
+      alert(`Gracias por tu compra. Total: $${total}`);
+      carrito = [];
+      total = 0;
+      actualizarCarrito();
+    }
+  }
+</script>
+</body>
+
+
+</html>
