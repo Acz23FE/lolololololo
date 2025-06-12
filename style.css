@@ -1,0 +1,148 @@
+:root {
+  --fondo: #121212;
+  --gris: #1f1f1f;
+  --texto: #e0e0e0;
+  --acento: #d4af37;
+  --hover: #b38f29;
+  --fuente: 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--fondo);
+  color: var(--texto);
+  font-family: var(--fuente);
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--gris);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo span {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: var(--acento);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--acento);
+}
+
+main {
+  padding: 40px 20px;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+.hero {
+  text-align: center;
+  background-color: #1a1a1a;
+  padding: 60px 20px;
+  border-radius: 10px;
+}
+
+.grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.grid img {
+  width: 200px;
+  border-radius: 8px;
+  border: 2px solid #333;
+}
+
+article {
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: var(--acento);
+  color: var(--fondo);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: var(--hover);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--gris);
+  border-top: 1px solid #333;
+}
+
+
+.producto {
+  background-color: #1f1f1f;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+.producto button {
+  margin-top: 10px;
+  background-color: #d4af37;
+  color: #121212;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#lista-carrito {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+#lista-carrito li {
+  margin: 5px 0;
+}
